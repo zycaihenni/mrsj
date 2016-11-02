@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通过数据库网页</title>
+		<style type="text/css">
+			 *{margin: 0;padding: 0;}
+  			#wrap{width: 640px;height: 500px;margin: 50px auto;}
+  			.title{list-style: none;float: left;width: 210px;height: 224px;background: black;margin:0 3px 3px 0;}
+  			img{width: 210px;height: 172px;}
+  			.a1{color:white;font-size: 14px;display: block;padding: 8px 0 0 8px;}
+  			.a1:hover{color: #4183c3;}
+  			.span1{color: grey;font-size: 10px;padding:8px 8px 0 8px;width: 10px;height: 10px;}
+  			.span2{color: #77db00;font-size: 10px;}
+  			.span2:hover{border-bottom: 1px solid  #77db00;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		function req(url,callBack){
+				var qq =new XMLHttpRequest;
+				qq.open("GET",url,true);
+				qq.send();
+				qq.onreadystatechange=function(){
+					if (qq.readyState==4&&qq.status==200) {
+						var str =qq.responseText;
+						var obj =JSON.parse(str);
+						if (callBack) {
+							callBack(obj);
+						}
+					}
+				}
+			}
+			req('ht.php',function(obj){
+				console.log(obj);
+				
+
+				create(obj);
+			});
+			
+			
+			
+			
+		 function create(obj){
+         var wrap = $("#wrap");
+          var ul = $("<ul></ul>");
+          wrap.append(ul);
+          for(var i =0;i<obj.length;i++){
+            var li = $("<li></li>");
+            li.addClass("title");
+  					var img = $("<img/>")
+  					$(li).append(img);
+
+  					img[0].src = "php/img/" + obj[i].preview;
+            ul.append(li);
+            var li_a = $("<a></a>");
+            li_a.addClass("a1");
+            li_a.text(obj[i].title);
+            li.append(li_a);
+            var span1 = $("<span></span>");
+            span1.addClass("span1");
+            span1.text(obj[i].by);
+            li.append(span1);
+            var span2 = $("<span></span>");
+            span2.addClass("span2");
+            span2.text(obj[i].details);
+            li.append(span2);
+          }
+   }
+			
+			
+		</script>
+	</body>
+</html>
