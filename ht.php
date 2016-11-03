@@ -1,6 +1,6 @@
 <?php
 
-$mysql= new mysqli("localhost","root","","mrsj");
+$mysql= new mysqli("localhost","root","root","mrsj");
 
 if ($mysql->connect_errno) {
   die($mysql->connect_errno);

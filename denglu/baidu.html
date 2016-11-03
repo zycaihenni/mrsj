@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+
+		<title></title>
+
+		<style type="text/css">
+				* {
+				padding: auto;
+				margin: auto;
+			}
+			
+			#login {
+				width: 400px;
+				height: 450px;
+				 
+			}
+			
+			.header {
+				height: 47px;
+				background: #f7f7f7;
+				position: relative;
+				border: 1px solid #ddd;
+				cursor: move;
+			}
+			
+			.header_word {
+				font-size: 20px;
+				
+				font-weight: bold;
+				line-height: 50px;
+				margin-left: 10px;
+			}
+			
+			.header_img {
+				margin-bottom: -6px;
+				margin-left: 20px;
+			}
+			
+			.header_x {
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				right: 0;
+				top: 16px;
+				background: url(img/baidu_logo.png) no-repeat -56px -48px;
+				cursor: pointer;
+			}
+			
+			.header_x:hover {
+				background-position: -72px -48px;
+			}
+			
+			.center_phone {
+				width: 352px;
+				text-align: right;
+				margin: 0 auto 10px;
+				padding-top: 20px;
+			}
+			
+			.center_phone a {
+				/*background: url(img/smsSwitchPhone.png) no-repeat 0 0;*/
+				padding-left: 15px;
+				font-size: 12px;
+				text-decoration: none;
+				font-family: Arial, Helvetica, STHeiti, "宋体";
+				color: black;
+			}
+			
+			.login_username {
+				width: 352px;
+				height: 42px;
+				border: 1px solid #DDDDDD;
+				margin: 0 auto 15px;
+				position: relative;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			.login_username label {
+				display: block;
+				position: absolute;
+				top: 8px;
+				left: 6px;
+				height: 24px;
+				/*background: url(img/input_icons.png) no-repeat 0 -68px;*/
+				padding: 0 0 0 24px;
+				z-index: 20;
+			}
+			
+			.login_username input {
+				width: 260px;
+				padding-right: 50px;
+				padding-left: 38px;
+				position: absolute;
+				top: 10px;
+				left: 0px;
+				height: 16px;
+				font-size: 14px;
+				border: none;
+				outline: 0;
+			}
+			
+			.header_pwd {
+				width: 352px;
+				height: 42px;
+				border: 1px solid #DDDDDD;
+				margin: 0 auto 15px;
+				position: relative;
+				font-size: 14px;
+				color: #666;
+			}
+			
+			.header_pwd label {
+				display: block;
+				position: absolute;
+				top: 8px;
+				left: 6px;
+				height: 24px;
+				/*background: url(img/input_icons.png) no-repeat 0 -148px;*/
+				padding: 0 0 0 24px;
+				z-index: 20;
+			}
+			
+			.header_pwd input {
+				width: 260px;
+				padding-right: 50px;
+				padding-left: 38px;
+				position: absolute;
+				top: 10px;
+				left: 0px;
+				height: 16px;
+				font-size: 14px;
+				border: none;
+				outline: 0;
+			}
+			
+			.auto_login {
+				width: 352px;
+				margin: 0 auto;
+				margin-bottom: 15px;
+				position: relative;
+				height: 16px;
+				font-size: 12px;
+			}
+			
+			.login {
+				<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title></title> <style type="text/css"> * {
+					padding: 0;
+					margin: 0;
+				}
+				#login {
+					width: 400px;
+					height: 450px;
+					border: 1px solid red;
+				}
+				.header {
+					height: 47px;
+					background: #f7f7f7;
+					position: relative;
+					border: 1px solid #ddd;
+					cursor: move;
+				}
+				.header_word {
+					font-size: 20px;
+					font-family: "宋体";
+					font-weight: bold;
+					line-height: 50px;
+					margin-left: 10px;
+				}
+				.header_img {
+					margin-bottom: -6px;
+					margin-left: 20px;
+				}
+				.header_x {
+					width: 16px;
+					height: 16px;
+					position: absolute;
+					right: 0;
+					top: 16px;
+					background: url(img/1.png) no-repeat -56px -48px;
+					cursor: pointer;
+				}
+				.header_x:hover {
+					background-position: -72px -48px;
+				}
+				.center_phone {
+					width: 352px;
+					text-align: right;
+					margin: 0 auto 10px;
+					padding-top: 20px;
+				}
+				.center_phone a {
+					background: url(img/smsSwitchPhone.png) no-repeat 0 0;
+					padding-left: 15px;
+					font-size: 12px;
+					text-decoration: none;
+					font-family: Arial, Helvetica, STHeiti, "宋体";
+					color: black;
+				}
+				.login_username {
+					width: 352px;
+					height: 42px;
+					border: 1px solid #DDDDDD;
+					margin: 0 auto 15px;
+					position: relative;
+					font-size: 14px;
+					color: #666;
+				}
+				.login_username label {
+					display: block;
+					position: absolute;
+					top: 8px;
+					left: 6px;
+					height: 24px;
+					background: url(img/input_icons.png) no-repeat 0 -68px;
+					padding: 0 0 0 24px;
+					z-index: 20;
+				}
+				.login_username input {
+					width: 260px;
+					padding-right: 50px;
+					padding-left: 38px;
+					position: absolute;
+					top: 10px;
+					left: 0px;
+					height: 16px;
+					font-size: 14px;
+					border: none;
+					outline: 0;
+				}
+				.header_pwd {
+					width: 352px;
+					height: 42px;
+					border: 1px solid #DDDDDD;
+					margin: 0 auto 15px;
+					position: relative;
+					font-size: 14px;
+					color: #666;
+				}
+				.header_pwd label {
+					display: block;
+					position: absolute;
+					top: 8px;
+					left: 6px;
+					height: 24px;
+					background: url(img/input_icons.png) no-repeat 0 -148px;
+					padding: 0 0 0 24px;
+					z-index: 20;
+				}
+				.header_pwd input {
+					width: 260px;
+					padding-right: 50px;
+					padding-left: 38px;
+					position: absolute;
+					top: 10px;
+					left: 0px;
+					height: 16px;
+					font-size: 14px;
+					border: none;
+					outline: 0;
+				}
+				.auto_login {
+					position: relative;
+					margin-bottom: 15px;
+				}
+				.login {
+					position: relative;
+					margin-bottom: 15px;
+				}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="login">
+
+			<div class="header">
+
+				<img class="header_img" src="img/baidu_logo.png" />
+
+				<span class="header_word">登录百度账号</span>
+
+				<a class="header_x"></a>
+
+			</div>
+
+			<div class="center">
+
+				<p class="center_phone">
+					<a href="#">短信快捷登录</a>
+				</p>
+
+				<p class="login_username">
+
+					<label for="userName"></label>
+
+					<input type="text" id="userName" name="userName" placeholder="手机/邮箱/用户名" />
+
+				</p>
+
+				<p class="header_pwd">
+
+					<label for="passWord"></label>
+
+					<input type="password" name="passWord" id="passWord" />
+
+				</p>
+
+				<p class="auto_login">
+
+					<input type="checkbox" name="autologin" id="autologin" value="" />
+
+					<label for="autologin">下次自动登录</label>
+
+				</p>
+
+				<p class="login" style="width: 352px;margin: 0 auto;">
+
+					<input type="text" name="" id="dl" value="登录" style="background: #3f89ec;width: 350px;height: 48px;
+
+font-size: 16px;font-weight: 700;cursor: pointer;color: #fff;text-align: center;" />
+
+					
+
+				</p>
+
+			</div>
+
+			<div class="footer">
+
+			</div>
+			<a href="zhuce.html">注册</a><a href="change.html">更改密码</a>
+		</div>
+
+		<script type="text/javascript">
+		
+		
+//		document.write(location.href);  测试 显示当前网页
+		
+			function req(url, callBack) {
+
+				var qq = new XMLHttpRequest();
+
+				qq.open("GET", url, true);
+
+				qq.send();
+
+				qq.onreadystatechange = function() {
+
+					if(qq.readyState == 4 && qq.status == 200) {
+
+						// json字符串解析成js对象
+
+						var str = qq.responseText;
+
+						var obj = JSON.parse(str);
+
+						if(callBack) {
+
+							callBack(obj);
+
+							console.log(obj)
+							
+
+						}
+
+					}
+
+				}
+
+			}
+
+			var zhanghao = document.querySelector("#userName");
+
+			var mima = document.querySelector("#passWord");
+
+			var btn = document.querySelector("#dl");
+
+			btn.onclick = function() {
+
+				
+
+				
+
+				var url = "login.php?username=" + zhanghao.value + "&pwd=" + mima.value;
+
+				req(url, function(obj) {
+
+					
+//					console.log(obj.type);
+					if (obj.type=='success') {
+						console.log('a');
+//						window.open("tiaozhuan.php");
+						location.replace("tiaozhuan.php");
+
+					}else {
+						alert('账号密码错误');
+					}
+					
+
+					
+
+				});
+
+			}
+		</script>
+
+	</body>
+
+</html>

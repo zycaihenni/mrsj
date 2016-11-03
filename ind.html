@@ -1,768 +1,1029 @@
-
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="混合现实,MR,虚拟现实,VR,VR一体机,增强现实,AR,可控核聚变,人体冷冻,脑科学,量子物理,量子计算,量子通信,量子,人工智能,星际穿越,星际旅行,太空,太空探索,三体,可控核聚变,可控核聚变飞船,曲率飞船,星际战舰,人体冷冻,宇宙天体,宇宙,恒星,行星">
-<meta name="description" content="虚拟现实,VR,增强现实,AR,VR一体机,可控核聚变,人体冷冻,脑科学,关注前沿科技，创造你的视界！明日世界，与你同行！">
-<title>明日世界 — 虚拟现实,增强现实,人工智能,量子物理,可控核聚变,人体冷冻,脑科学,太空探索,太空材料,关注前沿科技，创造你的视界！明日世界，与你同行！</title>
-<link href="http://www.vrpapa.com/public/css/bootstrap.min.css" rel="stylesheet">
-<link href="http://www.vrpapa.com/public/css/font-awesome.min.css" rel="stylesheet">
-<link href="http://www.vrpapa.com/theme/default/style.css" rel="stylesheet">
-<link href="http://www.vrpapa.com/theme/default/media.css" rel="stylesheet">
-<script src="http://www.vrpapa.com/public/js/jquery.min.js"></script>
-<script src="http://www.vrpapa.com/public/js/bootstrap.min.js"></script>
-<!--[if lt IE 9]>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="混合现实,MR,虚拟现实,VR,VR一体机,增强现实,AR,可控核聚变,人体冷冻,脑科学,量子物理,量子计算,量子通信,量子,人工智能,星际穿越,星际旅行,太空,太空探索,三体,可控核聚变,可控核聚变飞船,曲率飞船,星际战舰,人体冷冻,宇宙天体,宇宙,恒星,行星">
+		<meta name="description" content="虚拟现实,VR,增强现实,AR,VR一体机,可控核聚变,人体冷冻,脑科学,关注前沿科技，创造你的视界！明日世界，与你同行！">
+		<title>明日世界 — 虚拟现实,增强现实,人工智能,量子物理,可控核聚变,人体冷冻,脑科学,太空探索,太空材料,关注前沿科技，创造你的视界！明日世界，与你同行！</title>
+		<link href="http://www.vrpapa.com/public/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://www.vrpapa.com/public/css/font-awesome.min.css" rel="stylesheet">
+		<link href="http://www.vrpapa.com/theme/default/style.css" rel="stylesheet">
+		<link href="http://www.vrpapa.com/theme/default/media.css" rel="stylesheet">
+		<script src="http://www.vrpapa.com/public/js/jquery.min.js"></script>
+		<script src="http://www.vrpapa.com/public/js/bootstrap.min.js"></script>
+		<!--[if lt IE 9]>
 	<script src="http://www.vrpapa.com/public/js/html5shiv.min.js"></script>
 	<script src="http://www.vrpapa.com/public/js/respond.min.js"></script>
 <![endif]-->
-</head>
-<body>
-<a id="toptg"></a>
-<nav id="mobile-nav" class="navbar navbar-default navbar-fixed-top visible-xs-block visible-sm-block">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" id="mobile-nav-btn" class="navbar-toggle collapsed" aria-expanded="false">
+	</head>
+
+	<body>
+		<a id="toptg"></a>
+		<nav id="mobile-nav" class="navbar navbar-default navbar-fixed-top visible-xs-block visible-sm-block">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" id="mobile-nav-btn" class="navbar-toggle collapsed" aria-expanded="false">
 				<i class="fa fa-bars"></i>
 			</button>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="modal" data-target="#cartModal">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="modal" data-target="#cartModal">
 				<i class="fa fa-shopping-cart"></i>
 			</button>
-			<a class="navbar-brand" href="http://www.vrpapa.com">
-				<img src="http://www.vrpapa.com/theme/default/img/logo-sm.png" alt="明日世界" />
-			</a>
-		</div>
-	</div>
-</nav>
-<div id="nav-show-bg"></div>
-<script>
-    $('#mobile-nav-btn').click(function(){
-    		alert('点击mobile-nav-btn');
-        $('#header').addClass('navshow');
-        $('#nav-show-bg').css('display','block');
-    });
-    $('#nav-show-bg').click(function(){
-    		alert('点击#nav-show-bg');
-        $('#header').removeClass('navshow');
-        $(this).css('display','none');
-    });
-</script>
-<header id="header">
-    <div class="mobile-header-logo visible-xs-block visible-sm-block"></div>
-	<span class="bg"></span>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col">
-                <a class="logo pull-left hidden-xs" href="http://www.vrpapa.com">
-				    <img src="http://www.vrpapa.com/theme/default/img/logo-sm.png" alt="明日世界" />
-				</a>
-				<div id="nav">
-					<a class="nav-item" href="http://www.vrpapa.com">首页</a><a class="nav-item" href="http://www.vrpapa.com/?m=post&a=latest">前沿资讯</a><a class="nav-item" href="http://www.vrpapa.com/?m=index&a=authors">推荐作者</a><a class="nav-item" href="http://www.vrpapa.com/?m=bbs&a=index">明日社区</a><a class="nav-item" href="http://www.vrpapa.com/?m=pro&a=index">未来商城</a><a class="nav-item" href="http://asgardia.space/citizenship">Asgardia</a>				</div>
-			</div>
-			<div class="col-md-4 col text-right" id="header-tools">
-				<ul class="list-inline mb-0">
-					<li>
-						<a href="#" data-toggle="modal" data-target="#searchModal">
-							<i class="glyphicon glyphicon-search"></i>
-						</a>
-					</li>
-					<li>
-						<a href="http://www.vrpapa.com/?m=post&a=publish">
-							<i class="glyphicon glyphicon-edit"></i>
-						</a>
-					</li>
-										<li class="user unlog">
-						<a href="http://www.vrpapa.com?m=user&a=login">登录</a>
-						<span>|</span>
-						<a href="http://www.vrpapa.com?m=user&a=register">注册</a>
-											</li>
-									</ul>
-			</div>
-		</div>
-	</div>
-</header>
-<div class="container">
-			<div id="carousel-home" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-			<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-home" data-slide-to="1"></li>
-						<li data-target="#carousel-home" data-slide-to="2"></li>
-					</ol>
-				<div class="carousel-inner" role="listbox">
-			<a class="item active" href="http://mall.deepoon.com/" style="background-image: url(http://www.vrpapa.com/upload/image/201606/201606171732257161.jpg);"></a>
-						<a class="item" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.snailvr.manager&ckey=CK1341923194898" style="background-image: url(http://www.vrpapa.com/upload/image/201608/201608210109343847.png);"></a>
-									<a class="item" href="http://www.gevek.com/show/index/exhibition/id/10" style="background-image: url(http://www.vrpapa.com/upload/image/201607/201607242344371312.jpg);"></a>
-					</div>
-	</div>
-	    	<div class="row">
-		<div class="col-sm-9 col">
-            <div class="post-list">
-                <div class="home-side-box mb-0">
-                    <h4 class="title mt-0 mb-10 hidden-xs hidden-sm"><i class="fa fa-fire"></i> 热门文章</h4>
-                </div>
-                                <div class="post-866 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=866">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610272120172056.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=866">
-                                        大朋VR一体机深度评测：内容精彩、体验好                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/27</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    纵观现今的VR市场，呈现出了“手机盒子、一体机、PC头盔”三分天下…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 97</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-860 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=860">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610261653362989.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=860">
-                                        亮风台“Hi，AR world ”新品发布会  11月8日在北京举行                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/26</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    记者近日从可靠渠道获悉，国内AR技术领先团队亮风台新品发布会将于11…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 109</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                <div class="mb-20"><a href="http://spaceexpeditions.xcor.com" target="blank"><IMG src="/public/ad/taikong.jpg" border=0 width="100%" height="100%"></a></div>                                <div class="post-826 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=826">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610191238303530.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=826">
-                                        神舟十一号“牵手”天宫二号 专家解读“红娘锁”                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/19</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    19日凌晨，神舟十一号载人飞船与天宫二号空间实验室成功实现自动交会对…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 76</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-818 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=818">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610181142024865.jpeg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=818">
-                                        影院和VR，哥俩好的内在逻辑是什么？                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/18</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    自VR线下商业化道路之始，影城就被大家认为是天然的“好地段”，对于…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 421</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-804 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=804">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610151819349697.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=804">
-                                        外媒称宇宙中星系数量或达两万亿：超出预期20倍                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/15</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    点击图片进入下一页星空很美，这句抽象又直白的话包含了太多的内容，但…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 94</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-788 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=788">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610122104334838.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=788">
-                                        深空有风险 宇宙辐射恐致登火星宇航员大脑受损                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/12</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    自然出版集团旗下的《科学报告》载文称，宇宙辐射可能会对执行火星任务…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 137</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-756 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=756">
-                                <img src="http://www.vrpapa.com/upload/image/201610/201610071822415769.png">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=756">
-                                        微鲸VR：道理我都懂，可我就是要剧透——新歌声总选大揭密                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=1"><img src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a><span class="dian">•</span><span>2016/10/07</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    秋风吹，战鼓擂，《新歌声》总决赛谁怕谁！经过长达三个月的鏖战，由微…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 133</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-717 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=717">
-                                <img src="http://www.vrpapa.com/upload/image/201609/201609292149283641.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=717">
-                                        虚拟现实产业联盟（IVRA）在京正式成立                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/29</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    9月29日，在工业和信息化部电子信息司指导下，由中国电子信息产业发展研…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 142</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-712 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=712">
-                                <img src="http://www.vrpapa.com/upload/image/201609/201609271852203484.png">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=712">
-                                        2016中关村AR/VR/MR创业峰会——《裂空》引爆网游新趋势                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/27</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    9月25日下午两点，2016中关村AR/VR/MR创业峰会在微软北京办公室召…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 211</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <div class="post-679 post mb-20">
-                            <a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=679">
-                                <img src="http://www.vrpapa.com/upload/image/201609/201609211511263425.jpg">
-                            </a>
-                            <div class="post-right">
-                                <h2 class="title">
-                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=679">
-                                        中国新歌声助阵！直击微鲸VR上海发布会                                    </a>
-                                </h2>
-                                                                <div class="author mb-10">
-                                    <a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a> <a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/21</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="entry mb-10">
-                                    2016年9月20日，微鲸VR在上海卓美亚喜马拉雅酒店召开发布会。会上，微…                                </div>
-                                <ul class="list-inline mb-0">
-                                                                        <li><i class="glyphicon glyphicon-tag"></i> <a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a></li>
-                                                                        <li><i class="glyphicon glyphicon-heart"></i> 0</li>
-                                    <li><i class="glyphicon glyphicon-eye-open"></i> 284</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                                                <ul class="pagination"><li class='pnum disabled'><a href='javascript:;'>1/83</a></li><li class='first disabled'><a href='javascript:;'>&laquo;</a></li><li class='prev disabled'><a href='javascript:;'>&lsaquo;</a></li><li class="active"><a href="javascript:;">1</a></li><li><a href="http://www.vrpapa.com?page=2">2</a></li><li><a href="http://www.vrpapa.com?page=3">3</a></li><li><a href="http://www.vrpapa.com?page=4">4</a></li><li><a href="http://www.vrpapa.com?page=5">5</a></li><li class='next'><a href="http://www.vrpapa.com?page=2">&rsaquo;</a><li class='last'><a href="http://www.vrpapa.com?page=83">&raquo;</a></li></ul>            </div>
-		</div>
-		<div class="col-sm-3 col hidden-xs hidden-sm">
-            <div class="mb-20"><a href="http://www.vrpapa.com/?m=pro&a=single&id=6" target="blank"><IMG src="/public/ad/hololens.png" border=0 width="100%" height="100%"></a></div>			<div class="home-side-box side-latest-post">
-				<h4 class="title mt-0 mb-10">
-					<i class="fa fa-bars"></i> 最新文章
-					<a class="pull-right" href="http://www.vrpapa.com/?m=post&a=latest">更多</a>
-				</h4>
-				<ul class="media-list">
-															<li class="media">
-						<div class="media-left">
-							<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=875">
-								<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610282226059360.jpg" alt="尽管微软发布了VR头盔 但它最终的野心是混合现实">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=post&a=single&id=875">尽管微软发布了VR头盔 但它最终的野心是混合现实</a>
-							</h4>
-							<div class="excerpt">
-								文/VR次元 孙实尽管Surface Studio是昨晚…							</div>
-						</div>
-					</li>
-										<li class="media">
-						<div class="media-left">
-							<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=874">
-								<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610282207068427.png" alt="Magic Leap产品或进行百万级量产，将在明年上市？">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=post&a=single&id=874">Magic Leap产品或进行百万级量产，将在明年上市？</a>
-							</h4>
-							<div class="excerpt">
-								Magic Leap是科技领域最具有神秘色彩的新兴…							</div>
-						</div>
-					</li>
-										<li class="media">
-						<div class="media-left">
-							<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=873">
-								<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610282202419167.jpg" alt="SNH48鞠婧祎VR版MV《每一天》上线，“科技+娱乐”带来新视角">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=post&a=single&id=873">SNH48鞠婧祎VR版MV《每一天》上线，“科技+娱乐”带来新视角</a>
-							</h4>
-							<div class="excerpt">
-								10月27日，SNH48成员鞠婧祎最新专属单曲《…							</div>
-						</div>
-					</li>
-										<li class="media">
-						<div class="media-left">
-							<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=872">
-								<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610282149015879.jpg" alt="VR版《中国恐怖故事》10.31惊悚相约">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=post&a=single&id=872">VR版《中国恐怖故事》10.31惊悚相约</a>
-							</h4>
-							<div class="excerpt">
-								10月31日，恐怖惊悚VR系列剧《中国恐怖故事…							</div>
-						</div>
-					</li>
-										<li class="media">
-						<div class="media-left">
-							<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=871">
-								<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610282144159068.jpg" alt="“太空计划”震撼发布，大朋VR一体机开启星海之旅">
-							</a>
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=post&a=single&id=871">“太空计划”震撼发布，大朋VR一体机开启星海之旅</a>
-							</h4>
-							<div class="excerpt">
-								“我们的征途是星辰大海”，这句话是SPAC…							</div>
-						</div>
-					</li>
-									</ul>
-			</div>
-            <div class="home-side-box side-comment-list">
-					<h4 class="title mt-0 mb-10">
-						<i class="fa fa-commenting-o"></i> 最新评论
-					</h4>
-										<ul class="media-list">
-						                        						<li class="media">
-														<div class="media-left">
-								<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=1">
-									<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading mb-10">
-									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a> :
-								</h4>
-								<div class="content mb-10">
-									这个好神奇～～								</div>
-								<div class="time">
-									<i class="glyphicon glyphicon-time"></i> 2星期前								</div>
-							</div>
-						</li>
-						                        						<li class="media">
-														<div class="media-left">
-								<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=192">
-									<img class="media-object" src="http://www.vrpapa.com/public/img/avatar.png" alt="倾城之想#192">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading mb-10">
-									<a href="http://www.vrpapa.com/?m=user&a=index&id=192">倾城之想#192</a> :
-								</h4>
-								<div class="content mb-10">
-									真的不敢想，真是太先进了。 								</div>
-								<div class="time">
-									<i class="glyphicon glyphicon-time"></i> 1个月前								</div>
-							</div>
-						</li>
-						                        						<li class="media">
-														<div class="media-left">
-								<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=12">
-									<img class="media-object" src="http://www.vrpapa.com/public/img/avatar.png" alt="Fzerox#12">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading mb-10">
-									<a href="http://www.vrpapa.com/?m=user&a=index&id=12">Fzerox#12</a> :
-								</h4>
-								<div class="content mb-10">
-									嘿嘿 								</div>
-								<div class="time">
-									<i class="glyphicon glyphicon-time"></i> 2个月前								</div>
-							</div>
-						</li>
-						                        						<li class="media">
-														<div class="media-left">
-								<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=1">
-									<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1">
-								</a>
-							</div>
-							<div class="media-body">
-								<h4 class="media-heading mb-10">
-									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a> :
-								</h4>
-								<div class="content mb-10">
-									不错哦 								</div>
-								<div class="time">
-									<i class="glyphicon glyphicon-time"></i> 3个月前								</div>
-							</div>
-						</li>
-											</ul>
+					<a class="navbar-brand" href="http://www.vrpapa.com">
+						<img src="http://www.vrpapa.com/theme/default/img/logo-sm.png" alt="明日世界" />
+					</a>
 				</div>
-            			<div class="home-side-box side-pro-list">
-				<h4 class="title mt-0 mb-10">
-					<i class="fa fa-bookmark-o"></i> 会员专购
-					<a class="pull-right" href="http://www.vrpapa.com/?m=pro&a=index">更多</a>
-				</h4>
-								<ul class="media-list">
-										<li class="media">
-						<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=1">
-							<img class="media-object" src="http://www.vrpapa.com/upload/image/201602/201602071123434605.jpg">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=pro&a=single&id=1">小宅Z3 VR眼镜</a>
-							</h4>
-							<div class="price">98.1元</div>
-						</div>
-					</li>
-										<li class="media">
-						<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=3">
-							<img class="media-object" src="http://www.vrpapa.com/upload/image/201603/201603210319499492.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=pro&a=single&id=3">小宅Z4 国内第一款自带耳机VR眼镜</a>
-							</h4>
-							<div class="price">187元</div>
-						</div>
-					</li>
-										<li class="media">
-						<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=4">
-							<img class="media-object" src="http://www.vrpapa.com/upload/image/201604/201604080128246767.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=pro&a=single&id=4">【预售】大朋VR一体机M2头盔虚拟现实VR眼镜2K屏头戴式移动影院</a>
-							</h4>
-							<div class="price">3399元</div>
-						</div>
-					</li>
-										<li class="media">
-						<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=5">
-							<img class="media-object" src="http://www.vrpapa.com/upload/image/201604/201604080152298576.jpg">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=pro&a=single&id=5">三星 Gear VR 3代 虚拟现实头盔</a>
-							</h4>
-							<div class="price">888元</div>
-						</div>
-					</li>
-										<li class="media">
-						<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=6">
-							<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150136091470.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<a href="http://www.vrpapa.com/?m=pro&a=single&id=6">微软Hololens全息智能眼镜</a>
-							</h4>
-							<div class="price">34999元</div>
-						</div>
-					</li>
-									</ul>
 			</div>
-            		</div>
-	</div>
-</div>
-<div class="link-box"><div class="container"><div class="link-box-in"><h4 class="title">友情链接：</h4><a class="link-item" target="_blank" href="http://asgardia.space/citizenship">Asgardia太空城</a><a class="link-item" target="_blank" href="http://spaceexpeditions.xcor.com">XCOR Space Expeditions</a><a class="link-item" target="_blank" href="https://room.eu.com">Room</a><a class="link-item" target="_blank" href="http://www.starships.club">星际太空城</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">三体</a><a class="link-item" target="_blank" href="http://www.cryonics.org">Cryonics institute</a><a class="link-item" target="_blank" href="http://www.lenr.com.cn">冷聚变世界</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">星际战舰网</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">Magic Leap</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">Hololens Club</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">MR俱乐部</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">VR一体机</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">混合现实</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">增强现实</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">虚拟现实</a><a class="link-item" target="_blank" href="http://www.chinesecryonics.org">亚洲人体冷冻中心</a><a class="link-item" target="_blank" href="http://www.ara.org.cn ">中国增强现实产业联盟</a><a class="link-item" target="_blank" href="http://www.vrguancha.net">VR观察网</a><a class="link-item" target="_blank" href="http://www.chinaar.com ">中国AR网</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=三体&ie=utf-8">三体吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=宇宙&ie=utf-8">宇宙吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=增强现实&ie=utf-8">增强现实吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=虚拟现实&ie=utf-8">虚拟现实吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&kw=核聚变">核聚变吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=%C8%CB%CC%E5%C0%E4%B6%B3">人体冷冻吧</a><a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=%CC%EC%CE%C4&fr=ala0&tpl=5">天文吧</a><a class="link-item" target="_blank" href="http://www.cnsa.gov.cn">国家航天局</a><a class="link-item" target="_blank" href="http://www.iterchina.cn">中国核聚变执行中心</a><a class="link-item" target="_blank" href="http://www.news.cn/science/">科普中国</a><a class="link-item" target="_blank" href="http://www.moduovr.com/">魔多VR</a><a class="link-item" target="_blank" href="http://www.vrjie.com">VR界</a><a class="link-item" target="_blank" href="http://www.deepoon.com">大朋vr</a><a class="link-item" target="_blank" href="http://www.913vr.com">913VR</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">NASA 中文网</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">三体人网</a><a class="link-item" target="_blank" href="http://www.tomorroworld.com">未来世界</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">明日视界</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">ARinGalaxy</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">增强现实网</a><a class="link-item" target="_blank" href="http://www.arinchina.com">ARinChina</a><a class="link-item" target="_blank" href="http://www.iop.cas.cn">中科院物理所</a><a class="link-item" target="_blank" href="http://www.ssac.cas.cn">中科院空间科学研究院</a><a class="link-item" target="_blank" href="http://www.spacex.com">SpaceX</a><a class="link-item" target="_blank" href="http://www.nasa.gov">NASA</a><a class="link-item" target="_blank" href="http://www.khxx.net">科幻星系</a><a class="link-item" target="_blank" href="http://www.wcsfa.com">科幻星云网</a><a class="link-item" target="_blank" href="http://www.sfw.com.cn">科幻世界</a><a class="link-item" target="_blank" href="http://www.vraiai.com/">VRaiai</a><a class="link-item" target="_blank" href="http://huansixi.com/">幻思系</a><a class="link-item" target="_blank" href="http://www.argeeker.com">极AR</a><a class="link-item" target="_blank" href="http://www.vrpapa.com">VRpapa</a><a class="link-item" target="_blank" href="http://game.mojing.cn/">暴风游戏</a><a class="link-item" target="_blank" href="http://www.hao123vr.com/">Hao123VR</a><a class="link-item" target="_blank" href="http://www.ipp.cas.cn">中科院等离子体物理研究所</a><a class="link-item" target="_blank" href="http://www.cryonics.org">Cryonics institute</a><a class="link-item" target="_blank" href="http://vr.youku.com/">优酷VR</a></div></div></div><footer>
-	<div class="container">
-		©2014-2016 <a href="http://www.vrpapa.com/">Tomorroworld</a> 关注前沿科技动态，创造你的明日世界！
-	</div>
-	<div class="container">
-		天津琳杰网络科技有限公司 版权所有
-	</div>
-	<div class="container">
-		津ICP备15005440号-1
-	</div>
+		</nav>
+		<div id="nav-show-bg"></div>
+		<script>
+			$('#mobile-nav-btn').click(function() {
+				$('#header').addClass('navshow');
+				$('#nav-show-bg').css('display', 'block');
+			});
+			$('#nav-show-bg').click(function() {
+				$('#header').removeClass('navshow');
+				$(this).css('display', 'none');
+			});
+		</script>
+		<header id="header">
+			<div class="mobile-header-logo visible-xs-block visible-sm-block"></div>
+			<span class="bg"></span>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col">
+						<a class="logo pull-left hidden-xs" href="http://www.vrpapa.com">
+							<img src="http://www.vrpapa.com/theme/default/img/logo-sm.png" alt="明日世界" />
+						</a>
+						<div id="nav">
+							<a class="nav-item" href="http://www.vrpapa.com">首页</a>
+							<a class="nav-item" href="http://www.vrpapa.com/?m=post&a=latest">前沿资讯</a>
+							<a class="nav-item" href="http://www.vrpapa.com/?m=index&a=authors">推荐作者</a>
+							<a class="nav-item" href="http://www.vrpapa.com/?m=bbs&a=index">明日社区</a>
+							<a class="nav-item" href="http://www.vrpapa.com/?m=pro&a=index">未来商城</a>
+							<a class="nav-item" href="http://asgardia.space/citizenship">Asgardia</a>
+						</div>
+					</div>
+					<div class="col-md-4 col text-right" id="header-tools">
+						<ul class="list-inline mb-0">
+							<li>
+								<a href="#" data-toggle="modal" data-target="#searchModal">
+									<i class="glyphicon glyphicon-search"></i>
+								</a>
+							</li>
+							<li>
+								<a href="http://www.vrpapa.com/?m=post&a=publish">
+									<i class="glyphicon glyphicon-edit"></i>
+								</a>
+							</li>
+							<li class="cart">
+								<a href="#" data-toggle="modal" data-target="#cartModal">
+									<i class="glyphicon glyphicon-shopping-cart"></i>
+								</a>
+							</li>
+							<li class="user">
+								<img src="http://www.vrpapa.com/public/img/avatar.png" alt="zycaihenni#206">
+								<ul class="dropdown-menu" role="menu">
+									<div class="border">
+										<div class="arrow">
 
-</footer>
-<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <form method="get" action="http://www.vrpapa.com">
-				    <div class="form-group">
-				        <input type="text" class="form-control" name="s" placeholder="搜索文章、话题、用户、商品">
-				    </div>
-				</form>
-            </div>
-        </div>
-    </div>
-</div>
-<script>
-    $('#searchModal').on('show.bs.modal', function (e) {
-        $('#header').removeClass('navshow');
-        $('#nav-show-bg').css('display','none');
-    });
-</script>
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										</div>
+										<li>
+											<a href="http://www.vrpapa.com/?m=user&a=index">
+												<i class="glyphicon glyphicon-home"></i> 我的主页
+											</a>
+										</li>
+										<li>
+											<a href="http://www.vrpapa.com/?m=user&a=order">
+												<i class="glyphicon glyphicon-tower"></i> 我的订单
+											</a>
+										</li>
+										<li>
+											<a href="#" data-toggle="modal" data-target="#coinsModal">
+												<i class="glyphicon glyphicon-credit-card"></i> 我的财产
+											</a>
+										</li>
+										<li>
+											<a href="http://www.vrpapa.com/?m=user&a=set">
+												<i class="glyphicon glyphicon-cog"></i> 账号设置
+											</a>
+										</li>
+										<li>
+											<a href="http://www.vrpapa.com/?m=user&a=pass">
+												<i class="glyphicon glyphicon-lock"></i> 修改密码
+											</a>
+										</li>
+										<li>
+											<a href="http://www.vrpapa.com/?m=user&a=logout">
+												<i class="glyphicon glyphicon-off"></i> 退出
+											</a>
+										</li>
+									</div>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="modal fade" id="coinsModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">
 						&times;
 					</span>
 				</button>
-				<h4 class="modal-title">
-					我的购物车
+						<h4 class="modal-title">
+					<i class="glyphicon glyphicon-credit-card"></i> 我的财产
 				</h4>
-			</div>
-			<div class="modal-body">
-								<div class="nothing">
-					购物车中没有任何商品
-				</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-sm-6 col">
+								<div class="cash">
+									<div class="cashBox text-center mb-20">
+										<h4 class="title">现金余额</h4>
+										<h2 class="number">0 <small>元</small></h2>
+										<a href="http://www.vrpapa.com/?m=user&a=cash#ucash1">充值</a>
+										<a href="http://www.vrpapa.com/?m=user&a=cash#ucash2">提现</a>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<i class="glyphicon glyphicon-list-alt"></i> 账单明细
+											<a class="pull-right" href="http://www.vrpapa.com/?m=user&a=cash#ucash3">更多</a>
+										</div>
+										<div class="panel-body">
+											暂无任何账单
+										</div>
+									</div>
+								</div>
 							</div>
-			<div class="modal-footer">
-								<button type="button" class="btn btn-default" data-dismiss="modal">
-					继续购物
+							<div class="col-sm-6 col">
+								<div class="coins">
+									<div class="coinsBox text-center mb-20">
+										<h4 class="title">现有积分</h4>
+										<h2 class="number">0</h2>
+										<a href="http://www.vrpapa.com/?m=user&a=coins#ucash1">购买积分</a>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<i class="glyphicon glyphicon-list-alt"></i> 积分记录
+											<a class="pull-right" href="http://www.vrpapa.com/?m=user&a=coins#ucash3">更多</a>
+										</div>
+										<ul class="list-group">
+											<li class="list-group-item">
+												于 3分钟前 注册本站，获得赠送积分 => 积分：<span class="text-danger"></span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link pull-left">
+					23小时后 可再次获得登录积分				</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+					关闭
 				</button>
-				<a href="http://www.vrpapa.com/?m=pro&a=checkout" class="btn btn-warning">
-					确认购买
-				</a>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
-<script>
-    $('.cartNumber').keyup(function(){
-        var number = $(this).val();
-        if(number>0) {
-            $(this).parent('form').submit();
-        }
-    });
-</script>
-<div class="activityShowList active hidden-xs hidden-sm">
-    <div class="toggle">
-        <i class="fa fa-angle-down"></i>
-        <i class="fa fa-angle-up"></i>
-    </div>
-    <h4 class="title"><i class="fa fa-feed"></i> 最新动态</h4>
-<div class="media-list mb-0">
-                                                <div class="media">
-                            <div class="media-left">
-                                <a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
-                                    <img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">
+		<script>
+			$('#messageModal').on('show.bs.modal', function(e) {
+				$('#header').removeClass('navshow');
+				$('#nav-show-bg').css('display', 'none');
+			});
+			$('#coinsModal').on('show.bs.modal', function(e) {
+				$('#header').removeClass('navshow');
+				$('#nav-show-bg').css('display', 'none');
+			});
+		</script>
+		<div class="container">
+			<div id="carousel-home" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-home" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-home" data-slide-to="1"></li>
+					<li data-target="#carousel-home" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<a class="item active" href="http://mall.deepoon.com/" style="background-image: url(http://www.vrpapa.com/upload/image/201606/201606171732257161.jpg);"></a>
+					<a class="item" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.snailvr.manager&ckey=CK1341923194898" style="background-image: url(http://www.vrpapa.com/upload/image/201608/201608210109343847.png);"></a>
+					<a class="item" href="http://www.gevek.com/show/index/exhibition/id/10" style="background-image: url(http://www.vrpapa.com/upload/image/201607/201607242344371312.jpg);"></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-9 col">
+					<div class="post-list">
+						<div class="home-side-box mb-0">
+							<h4 class="title mt-0 mb-10 hidden-xs hidden-sm"><i class="fa fa-fire"></i> 热门文章</h4>
+						</div>
+						<div class="post-866 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=866">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610272120172056.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=866">
+                                        大朋VR一体机深度评测：内容精彩、体验好                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/27</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									纵观现今的VR市场，呈现出了“手机盒子、一体机、PC头盔”三分天下… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 125</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-860 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=860">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610261653362989.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=860">
+                                        亮风台“Hi，AR world ”新品发布会  11月8日在北京举行                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/26</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									记者近日从可靠渠道获悉，国内AR技术领先团队亮风台新品发布会将于11… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 127</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="mb-20">
+							<a href="http://spaceexpeditions.xcor.com" target="blank">
+								<IMG src="/public/ad/taikong.jpg" border=0 width="100%" height="100%">
+							</a>
+						</div>
+						<div class="post-826 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=826">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610191238303530.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=826">
+                                        神舟十一号“牵手”天宫二号 专家解读“红娘锁”                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/19</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									19日凌晨，神舟十一号载人飞船与天宫二号空间实验室成功实现自动交会对… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 101</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-818 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=818">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610181142024865.jpeg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=818">
+                                        影院和VR，哥俩好的内在逻辑是什么？                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/18</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									自VR线下商业化道路之始，影城就被大家认为是天然的“好地段”，对于… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 442</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-804 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=804">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610151819349697.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=804">
+                                        外媒称宇宙中星系数量或达两万亿：超出预期20倍                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/15</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									点击图片进入下一页星空很美，这句抽象又直白的话包含了太多的内容，但… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 114</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-788 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=788">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610122104334838.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=788">
+                                        深空有风险 宇宙辐射恐致登火星宇航员大脑受损                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/10/12</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									自然出版集团旗下的《科学报告》载文称，宇宙辐射可能会对执行火星任务… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=15">宇宙探索</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 147</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-756 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=756">
+								<img src="http://www.vrpapa.com/upload/image/201610/201610071822415769.png">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=756">
+                                        微鲸VR：道理我都懂，可我就是要剧透——新歌声总选大揭密                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=1"><img src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a><span class="dian">•</span><span>2016/10/07</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									秋风吹，战鼓擂，《新歌声》总决赛谁怕谁！经过长达三个月的鏖战，由微… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 146</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-717 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=717">
+								<img src="http://www.vrpapa.com/upload/image/201609/201609292149283641.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=717">
+                                        虚拟现实产业联盟（IVRA）在京正式成立                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/29</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									9月29日，在工业和信息化部电子信息司指导下，由中国电子信息产业发展研… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 149</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-712 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=712">
+								<img src="http://www.vrpapa.com/upload/image/201609/201609271852203484.png">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=712">
+                                        2016中关村AR/VR/MR创业峰会——《裂空》引爆网游新趋势                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/27</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									9月25日下午两点，2016中关村AR/VR/MR创业峰会在微软北京办公室召… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 226</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="post-679 post mb-20">
+							<a class="pull-left img-div" href="http://www.vrpapa.com/?m=post&a=single&id=679">
+								<img src="http://www.vrpapa.com/upload/image/201609/201609211511263425.jpg">
+							</a>
+							<div class="post-right">
+								<h2 class="title">
+                                    <a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=679">
+                                        中国新歌声助阵！直击微鲸VR上海发布会                                    </a>
+                                </h2>
+								<div class="author mb-10">
+									<a class="avatar" href="http://www.vrpapa.com/?m=user&a=index&id=196"><img src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196"></a>
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=196">2029年的小明#196</a><span class="dian">•</span><span>2016/09/21</span>
+									<div class="clearfix"></div>
+								</div>
+								<div class="entry mb-10">
+									2016年9月20日，微鲸VR在上海卓美亚喜马拉雅酒店召开发布会。会上，微… </div>
+								<ul class="list-inline mb-0">
+									<li><i class="glyphicon glyphicon-tag"></i>
+										<a href="http://www.vrpapa.com/?m=post&a=term&id=2">虚拟/增强现实</a>
+									</li>
+									<li><i class="glyphicon glyphicon-heart"></i> 0</li>
+									<li><i class="glyphicon glyphicon-eye-open"></i> 309</li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<ul class="pagination">
+							<li class='pnum disabled'>
+								<a href='javascript:;'>1/85</a>
+							</li>
+							<li class='first disabled'>
+								<a href='javascript:;'>&laquo;</a>
+							</li>
+							<li class='prev disabled'>
+								<a href='javascript:;'>&lsaquo;</a>
+							</li>
+							<li class="active">
+								<a href="javascript:;">1</a>
+							</li>
+							<li>
+								<a href="http://www.vrpapa.com?page=2">2</a>
+							</li>
+							<li>
+								<a href="http://www.vrpapa.com?page=3">3</a>
+							</li>
+							<li>
+								<a href="http://www.vrpapa.com?page=4">4</a>
+							</li>
+							<li>
+								<a href="http://www.vrpapa.com?page=5">5</a>
+							</li>
+							<li class='next'>
+								<a href="http://www.vrpapa.com?page=2">&rsaquo;</a>
+								<li class='last'>
+									<a href="http://www.vrpapa.com?page=85">&raquo;</a>
+								</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-3 col hidden-xs hidden-sm">
+					<div class="mb-20">
+						<a href="http://www.gevek.com/show/index/exhibition/id/10" target="blank">
+							<IMG src="/public/ad/jiweikecemian.jpeg" border=0 width="100%" height="100%">
+						</a>
+					</div>
+					<div class="home-side-box side-latest-post">
+						<h4 class="title mt-0 mb-10">
+					<i class="fa fa-bars"></i> 最新文章
+					<a class="pull-right" href="http://www.vrpapa.com/?m=post&a=latest">更多</a>
+				</h4>
+						<ul class="media-list">
+							<li class="media">
+								<div class="media-left">
+									<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=903">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611021618066238.jpg" alt="物理学家语出惊人说人死后意识会以量子状态存在">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=post&a=single&id=903">物理学家语出惊人说人死后意识会以量子状态存在</a>
+							</h4>
+									<div class="excerpt">
+										“位于德国哥廷根的马克思普朗克生物物理化学… </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=902">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611021610486300.jpeg" alt="国际首次！中国科学家超越谢尔顿 实现全新量子物态">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=post&a=single&id=902">国际首次！中国科学家超越谢尔顿 实现全新量子物态</a>
+							</h4>
+									<div class="excerpt">
+										9月27日，中国科学技术大学上海研究院潘… </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=901">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611021609014840.jpg" alt="淘宝Buy+刚上线就有人“败家”，“双11”会变成VR狂欢节吗？">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=post&a=single&id=901">淘宝Buy+刚上线就有人“败家”，“双11”会变成VR狂欢节吗？</a>
+							</h4>
+									<div class="excerpt">
+										“整个购物体验过程特别流畅，操作简单，比预… </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=900">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611021607021833.jpg" alt="外媒关注故宫用VR重现考古发掘 游客：简直太真实了">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=post&a=single&id=900">外媒关注故宫用VR重现考古发掘 游客：简直太真实了</a>
+							</h4>
+									<div class="excerpt">
+										外媒称，10岁的张颖头带黑色的超… </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="wto" href="http://www.vrpapa.com/?m=post&a=single&id=899">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611021601228146.png" alt="百度VR浏览器,和普通的VR APP有什么区别?">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=post&a=single&id=899">百度VR浏览器,和普通的VR APP有什么区别?</a>
+							</h4>
+									<div class="excerpt">
+										2016年，VR(虚拟现实)爆发元年，国内… </div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="home-side-box side-comment-list">
+						<h4 class="title mt-0 mb-10">
+						<i class="fa fa-commenting-o"></i> 最新评论
+					</h4>
+						<ul class="media-list">
+							<li class="media">
+								<div class="media-left">
+									<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=1">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading mb-10">
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a> :
+								</h4>
+									<div class="content mb-10">
+										你那边看到的是缓存。。。重新上传一下才可以 </div>
+									<div class="time">
+										<i class="glyphicon glyphicon-time"></i> 23小时前 </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=205">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201611/201611011437089373.png" alt="雷老虎#205">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading mb-10">
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=205">雷老虎#205</a> :
+								</h4>
+									<div class="content mb-10">
+										难道你们看不到图么？我这边都可以看到的呀，手动惊慌~~~ </div>
+									<div class="time">
+										<i class="glyphicon glyphicon-time"></i> 1天前 </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=1">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading mb-10">
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a> :
+								</h4>
+									<div class="content mb-10">
+										图呢？ </div>
+									<div class="time">
+										<i class="glyphicon glyphicon-time"></i> 1天前 </div>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=1">
+										<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150308557612.jpg" alt="“自然选择”号舰长章北海#1">
+									</a>
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading mb-10">
+									<a href="http://www.vrpapa.com/?m=user&a=index&id=1">“自然选择”号舰长章北海#1</a> :
+								</h4>
+									<div class="content mb-10">
+										可以在天猫京东看下～目前好像还没大规模上市～ </div>
+									<div class="time">
+										<i class="glyphicon glyphicon-time"></i> 1天前 </div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="home-side-box side-pro-list">
+						<h4 class="title mt-0 mb-10">
+					<i class="fa fa-bookmark-o"></i> 会员专购
+					<a class="pull-right" href="http://www.vrpapa.com/?m=pro&a=index">更多</a>
+				</h4>
+						<ul class="media-list">
+							<li class="media">
+								<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=1">
+									<img class="media-object" src="http://www.vrpapa.com/upload/image/201602/201602071123434605.jpg">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=pro&a=single&id=1">小宅Z3 VR眼镜</a>
+							</h4>
+									<div class="price">98.1元</div>
+								</div>
+							</li>
+							<li class="media">
+								<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=3">
+									<img class="media-object" src="http://www.vrpapa.com/upload/image/201603/201603210319499492.png">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=pro&a=single&id=3">小宅Z4 国内第一款自带耳机VR眼镜</a>
+							</h4>
+									<div class="price">187元</div>
+								</div>
+							</li>
+							<li class="media">
+								<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=4">
+									<img class="media-object" src="http://www.vrpapa.com/upload/image/201604/201604080128246767.png">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=pro&a=single&id=4">【预售】大朋VR一体机M2头盔虚拟现实VR眼镜2K屏头戴式移动影院</a>
+							</h4>
+									<div class="price">3399元</div>
+								</div>
+							</li>
+							<li class="media">
+								<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=5">
+									<img class="media-object" src="http://www.vrpapa.com/upload/image/201604/201604080152298576.jpg">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=pro&a=single&id=5">三星 Gear VR 3代 虚拟现实头盔</a>
+							</h4>
+									<div class="price">888元</div>
+								</div>
+							</li>
+							<li class="media">
+								<a class="media-left img-div" href="http://www.vrpapa.com/?m=pro&a=single&id=6">
+									<img class="media-object" src="http://www.vrpapa.com/upload/image/201610/201610150136091470.png">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">
+								<a href="http://www.vrpapa.com/?m=pro&a=single&id=6">微软Hololens全息智能眼镜</a>
+							</h4>
+									<div class="price">34999元</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="link-box">
+			<div class="container">
+				<div class="link-box-in">
+					<h4 class="title">友情链接：</h4>
+					<a class="link-item" target="_blank" href="http://asgardia.space/citizenship">Asgardia太空城</a>
+					<a class="link-item" target="_blank" href="http://spaceexpeditions.xcor.com">XCOR Space Expeditions</a>
+					<a class="link-item" target="_blank" href="https://room.eu.com">Room</a>
+					<a class="link-item" target="_blank" href="http://www.starships.club">星际太空城</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">三体</a>
+					<a class="link-item" target="_blank" href="http://www.cryonics.org">Cryonics institute</a>
+					<a class="link-item" target="_blank" href="http://www.lenr.com.cn">冷聚变世界</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">星际战舰网</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">Magic Leap</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">Hololens Club</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">MR俱乐部</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">VR一体机</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">混合现实</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">增强现实</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">虚拟现实</a>
+					<a class="link-item" target="_blank" href="http://www.chinesecryonics.org">亚洲人体冷冻中心</a>
+					<a class="link-item" target="_blank" href="http://www.ara.org.cn ">中国增强现实产业联盟</a>
+					<a class="link-item" target="_blank" href="http://www.vrguancha.net">VR观察网</a>
+					<a class="link-item" target="_blank" href="http://www.chinaar.com ">中国AR网</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=三体&ie=utf-8">三体吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=宇宙&ie=utf-8">宇宙吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=增强现实&ie=utf-8">增强现实吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=虚拟现实&ie=utf-8">虚拟现实吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?ie=utf-8&kw=核聚变">核聚变吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=%C8%CB%CC%E5%C0%E4%B6%B3">人体冷冻吧</a>
+					<a class="link-item" target="_blank" href="http://tieba.baidu.com/f?kw=%CC%EC%CE%C4&fr=ala0&tpl=5">天文吧</a>
+					<a class="link-item" target="_blank" href="http://www.cnsa.gov.cn">国家航天局</a>
+					<a class="link-item" target="_blank" href="http://www.iterchina.cn">中国核聚变执行中心</a>
+					<a class="link-item" target="_blank" href="http://www.news.cn/science/">科普中国</a>
+					<a class="link-item" target="_blank" href="http://www.moduovr.com/">魔多VR</a>
+					<a class="link-item" target="_blank" href="http://www.vrjie.com">VR界</a>
+					<a class="link-item" target="_blank" href="http://www.deepoon.com">大朋vr</a>
+					<a class="link-item" target="_blank" href="http://www.913vr.com">913VR</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">NASA 中文网</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">三体人网</a>
+					<a class="link-item" target="_blank" href="http://www.tomorroworld.com">未来世界</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">明日视界</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">ARinGalaxy</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">增强现实网</a>
+					<a class="link-item" target="_blank" href="http://www.arinchina.com">ARinChina</a>
+					<a class="link-item" target="_blank" href="http://www.iop.cas.cn">中科院物理所</a>
+					<a class="link-item" target="_blank" href="http://www.ssac.cas.cn">中科院空间科学研究院</a>
+					<a class="link-item" target="_blank" href="http://www.spacex.com">SpaceX</a>
+					<a class="link-item" target="_blank" href="http://www.nasa.gov">NASA</a>
+					<a class="link-item" target="_blank" href="http://www.khxx.net">科幻星系</a>
+					<a class="link-item" target="_blank" href="http://www.wcsfa.com">科幻星云网</a>
+					<a class="link-item" target="_blank" href="http://www.sfw.com.cn">科幻世界</a>
+					<a class="link-item" target="_blank" href="http://www.vraiai.com/">VRaiai</a>
+					<a class="link-item" target="_blank" href="http://huansixi.com/">幻思系</a>
+					<a class="link-item" target="_blank" href="http://www.argeeker.com">极AR</a>
+					<a class="link-item" target="_blank" href="http://www.vrpapa.com">VRpapa</a>
+					<a class="link-item" target="_blank" href="http://game.mojing.cn/">暴风游戏</a>
+					<a class="link-item" target="_blank" href="http://www.hao123vr.com/">Hao123VR</a>
+					<a class="link-item" target="_blank" href="http://www.ipp.cas.cn">中科院等离子体物理研究所</a>
+					<a class="link-item" target="_blank" href="http://www.cryonics.org">Cryonics institute</a>
+					<a class="link-item" target="_blank" href="http://vr.youku.com/">优酷VR</a>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				©2014-2016
+				<a href="http://www.vrpapa.com/">Tomorroworld</a> 关注前沿科技动态，创造你的明日世界！
+			</div>
+			<div class="container">
+				天津琳杰网络科技有限公司 版权所有
+			</div>
+			<div class="container">
+				津ICP备15005440号-1
+			</div>
+
+		</footer>
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<form method="get" action="http://www.vrpapa.com">
+							<div class="form-group">
+								<input type="text" class="form-control" name="s" placeholder="搜索文章、话题、用户、商品">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('#searchModal').on('show.bs.modal', function(e) {
+				$('#header').removeClass('navshow');
+				$('#nav-show-bg').css('display', 'none');
+			});
+		</script>
+		<div class="modal fade" id="cartModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">
+						&times;
+					</span>
+				</button>
+						<h4 class="modal-title">
+					我的购物车
+				</h4>
+					</div>
+					<div class="modal-body">
+						<div class="nothing">
+							购物车中没有任何商品
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+					继续购物
+				</button>
+						<a href="http://www.vrpapa.com/?m=pro&a=checkout" class="btn btn-warning">
+							确认购买
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('.cartNumber').keyup(function() {
+				var number = $(this).val();
+				if(number > 0) {
+					$(this).parent('form').submit();
+				}
+			});
+		</script>
+		<div class="activityShowList  hidden-xs hidden-sm">
+			<div class="toggle">
+				<i class="fa fa-angle-down"></i>
+				<i class="fa fa-angle-up"></i>
+			</div>
+			<h4 class="title"><i class="fa fa-feed"></i> 最新动态</h4>
+			<div class="media-list mb-0">
+				<div class="media">
+					<div class="media-left">
+						<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
+							<img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
                                     <a class="wto" href="http://www.vrpapa.com/?m=user&a=index&id=196">
                                         2029年的小明#196                                    </a>
                                     <span class="date">
-                                        12小时前                                    </span>
+                                        18小时前                                    </span>
                                     <div class="clearfix"></div>
                                 </h4>
-                                <div class="content wto">
-                                    我发表了文章《<a href="http://www.vrpapa.com/?m=post&a=single&id=875">尽管微软发布了VR头盔 但它最终的野心是混合现实</a>》：文/VR次元 孙实尽管Surface Studio是昨晚微软发布会的主角，…                                 </div>
-                            </div>
-                        </div>
-                                                <div class="media">
-                            <div class="media-left">
-                                <a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
-                                    <img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">
+						<div class="content wto">
+							我发表了文章《
+							<a href="http://www.vrpapa.com/?m=post&a=single&id=903">物理学家语出惊人说人死后意识会以量子状态存在</a>》：“位于德国哥廷根的马克思普朗克生物物理化学研究所的Christian… </div>
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
+							<img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
                                     <a class="wto" href="http://www.vrpapa.com/?m=user&a=index&id=196">
                                         2029年的小明#196                                    </a>
                                     <span class="date">
-                                        12小时前                                    </span>
+                                        18小时前                                    </span>
                                     <div class="clearfix"></div>
                                 </h4>
-                                <div class="content wto">
-                                    我发表了文章《<a href="http://www.vrpapa.com/?m=post&a=single&id=874">Magic Leap产品或进行百万级量产，将在明年上市？</a>》：Magic Leap是科技领域最具有神秘色彩的新兴公司。它从诸如谷歌…                                 </div>
-                            </div>
-                        </div>
-                                                <div class="media">
-                            <div class="media-left">
-                                <a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
-                                    <img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">
+						<div class="content wto">
+							我发表了文章《
+							<a href="http://www.vrpapa.com/?m=post&a=single&id=902">国际首次！中国科学家超越谢尔顿 实现全新量子物态</a>》： 9月27日，中国科学技术大学上海研究院潘建伟及其同事陈宇翱… </div>
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
+							<img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
                                     <a class="wto" href="http://www.vrpapa.com/?m=user&a=index&id=196">
                                         2029年的小明#196                                    </a>
                                     <span class="date">
-                                        12小时前                                    </span>
+                                        18小时前                                    </span>
                                     <div class="clearfix"></div>
                                 </h4>
-                                <div class="content wto">
-                                    我发表了文章《<a href="http://www.vrpapa.com/?m=post&a=single&id=873">SNH48鞠婧祎VR版MV《每一天》上线，“科技+娱乐”带来新视角</a>》：10月27日，SNH48成员鞠婧祎最新专属单曲《每一天》MV首发上…                                 </div>
-                            </div>
-                        </div>
-                                                <div class="media">
-                            <div class="media-left">
-                                <a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
-                                    <img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">
+						<div class="content wto">
+							我发表了文章《
+							<a href="http://www.vrpapa.com/?m=post&a=single&id=901">淘宝Buy+刚上线就有人“败家”，“双11”会变成VR狂欢节吗？</a>》：“整个购物体验过程特别流畅，操作简单，比预想中来的更好”，孟… </div>
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
+							<img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
                                     <a class="wto" href="http://www.vrpapa.com/?m=user&a=index&id=196">
                                         2029年的小明#196                                    </a>
                                     <span class="date">
-                                        12小时前                                    </span>
+                                        18小时前                                    </span>
                                     <div class="clearfix"></div>
                                 </h4>
-                                <div class="content wto">
-                                    我发表了文章《<a href="http://www.vrpapa.com/?m=post&a=single&id=872">VR版《中国恐怖故事》10.31惊悚相约</a>》：10月31日，恐怖惊悚VR系列剧《中国恐怖故事》第一季《Office魅…                                 </div>
-                            </div>
-                        </div>
-                                                <div class="media">
-                            <div class="media-left">
-                                <a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
-                                    <img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">
+						<div class="content wto">
+							我发表了文章《
+							<a href="http://www.vrpapa.com/?m=post&a=single&id=900">外媒关注故宫用VR重现考古发掘 游客：简直太真实了</a>》： 外媒称，10岁的张颖头带黑色的超大虚拟现实(VR)眼… </div>
+					</div>
+				</div>
+				<div class="media">
+					<div class="media-left">
+						<a class="img-div" href="http://www.vrpapa.com/?m=user&a=index&id=196">
+							<img class="media-object" src="http://vrpapa.com/upload/image/201609/201609141953554700.jpg" alt="2029年的小明#196">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">
                                     <a class="wto" href="http://www.vrpapa.com/?m=user&a=index&id=196">
                                         2029年的小明#196                                    </a>
                                     <span class="date">
-                                        12小时前                                    </span>
+                                        18小时前                                    </span>
                                     <div class="clearfix"></div>
                                 </h4>
-                                <div class="content wto">
-                                    我发表了文章《<a href="http://www.vrpapa.com/?m=post&a=single&id=871">“太空计划”震撼发布，大朋VR一体机开启星海之旅</a>》：“我们的征途是星辰大海”，这句话是SPACEET“太空计划”…                                 </div>
-                            </div>
-                        </div>
-                                            </div>
-</div>
-<script>
-    $('.activityShowList .fa-angle-down').click(function(){
-        $('.activityShowList').animate({bottom:"-306px"});
-        $('.activityShowList').removeClass('active');
-        $.ajax({
-            url: 'http://www.vrpapa.com/do/dont-show-activity.php?type=1',
-            type: 'GET',
-            dataType: 'json',
-            timeout: 9000,
-            error: function() {
-            },
-            success: function(date) {
-            }
-        }); 
-    });
-    $('.activityShowList .fa-angle-up').click(function(){
-        $('.activityShowList').animate({bottom:"-1px"});
-        $('.activityShowList').addClass('active');
-        $.ajax({
-            url: 'http://www.vrpapa.com/do/dont-show-activity.php?type=2',
-            type: 'GET',
-            dataType: 'json',
-            timeout: 9000,
-            error: function() {
-            },
-            success: function(date) {
-            }
-        }); 
-    });
-</script>
-<div class="mobile-foot-nav visible-xs-block visible-sm-block">
-    <a class="mobile-foot-nav-item active" href="http://www.vrpapa.com">
-        <i class="fa fa-home"></i>
-    </a>
-    <a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=post&a=topic">
-        <i class="fa fa-archive"></i>
-    </a>
-    <a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=user&a=like">
-        <i class="fa fa-star"></i>
-    </a>
-    <a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=user&a=set">
-        <i class="fa fa-gears"></i>
-    </a>
-</div>
-<!--[if lte IE 8]>
+						<div class="content wto">
+							我发表了文章《
+							<a href="http://www.vrpapa.com/?m=post&a=single&id=899">百度VR浏览器,和普通的VR APP有什么区别?</a>》： 2016年，VR(虚拟现实)爆发元年，国内各大厂商纷纷推出V… </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('.activityShowList .fa-angle-down').click(function() {
+				$('.activityShowList').animate({
+					bottom: "-306px"
+				});
+				$('.activityShowList').removeClass('active');
+				$.ajax({
+					url: 'http://www.vrpapa.com/do/dont-show-activity.php?type=1',
+					type: 'GET',
+					dataType: 'json',
+					timeout: 9000,
+					error: function() {},
+					success: function(date) {}
+				});
+			});
+			$('.activityShowList .fa-angle-up').click(function() {
+				$('.activityShowList').animate({
+					bottom: "-1px"
+				});
+				$('.activityShowList').addClass('active');
+				$.ajax({
+					url: 'http://www.vrpapa.com/do/dont-show-activity.php?type=2',
+					type: 'GET',
+					dataType: 'json',
+					timeout: 9000,
+					error: function() {},
+					success: function(date) {}
+				});
+			});
+		</script>
+		<div class="mobile-foot-nav visible-xs-block visible-sm-block">
+			<a class="mobile-foot-nav-item active" href="http://www.vrpapa.com">
+				<i class="fa fa-home"></i>
+			</a>
+			<a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=post&a=topic">
+				<i class="fa fa-archive"></i>
+			</a>
+			<a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=user&a=like">
+				<i class="fa fa-star"></i>
+			</a>
+			<a class="mobile-foot-nav-item " href="http://www.vrpapa.com/?m=user&a=set">
+				<i class="fa fa-gears"></i>
+			</a>
+		</div>
+		<!--[if lte IE 8]>
 <div class="browser-msg text-center">
 	<p class="txt">
 		为了获得更好的浏览体验，建议使用以下浏览器：
@@ -804,7 +1065,45 @@
 	</ul>
 </div>
 <![endif]-->
-<script src="http://www.vrpapa.com/public/js/cat.js"></script>
-<script src="http://s11.cnzz.com/z_stat.php?id=1257424294&web_id=1257424294" language="JavaScript"></script>
-</body>
+		<script src="http://www.vrpapa.com/public/js/cat.js"></script>
+		<script>
+			function maoo_add_guanzhu(id) {
+				$.ajax({
+					url: 'http://www.vrpapa.com/do/add_guanzhu.php?id=' + id,
+					type: 'GET',
+					dataType: 'html',
+					timeout: 9000,
+					error: function() {
+						alert('提交失败！');
+					},
+					success: function(html) {
+						var count = $('#maoo_guanzhu_' + id + ' span').text() * 1 + 1;
+						$('#maoo_guanzhu_' + id).attr('href', 'javascript:maoo_remove_guanzhu(' + id + ');');
+						$('#maoo_guanzhu_' + id).addClass('active');
+						$('#maoo_guanzhu_' + id).html('<i class=\'glyphicon glyphicon-star\'></i> 取消关注 <span>' + count + '</span>');
+					}
+				});
+			};
+
+			function maoo_remove_guanzhu(id) {
+				$.ajax({
+					url: 'http://www.vrpapa.com/do/remove_guanzhu.php?id=' + id,
+					type: 'GET',
+					dataType: 'html',
+					timeout: 9000,
+					error: function() {
+						alert('提交失败！');
+					},
+					success: function(html) {
+						var count = $('#maoo_guanzhu_' + id + ' span').text() * 1 - 1;
+						$('#maoo_guanzhu_' + id).attr('href', 'javascript:maoo_add_guanzhu(' + id + ');');
+						$('#maoo_guanzhu_' + id).removeClass('active');
+						$('#maoo_guanzhu_' + id).html('<i class=\'glyphicon glyphicon-star\'></i> 关注 <span>' + count + '</span>');
+					}
+				});
+			};
+		</script>
+		<script src="http://s11.cnzz.com/z_stat.php?id=1257424294&web_id=1257424294" language="JavaScript"></script>
+	</body>
+
 </html>

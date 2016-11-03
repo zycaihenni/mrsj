@@ -7,6 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/swiper-3.3.1.min.css"/>
+		<link rel="stylesheet" href="css/media.css" />
+		<link rel="stylesheet" type="text/css" href="css/moren.css"/>
+		
 		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script src="js/swiper-3.3.1.min.js"></script>
 		
@@ -24,7 +27,7 @@
 						<i class="fa fa-shopping-cart"></i>
 					</button>
 					<a class="navbar-brand" href="index.html">
-						<img src="php/img/logo-sm.png" alt="明日世界" />
+						<img src="php/img/logo-sm.png" alt="明日世界 " />
 					</a>
 				</div>
 			</div>
@@ -32,12 +35,85 @@
 	<div id="nav-show-bg"></div>
 	
 	
-	<!--轮播图-->
+	
+			
+	
+	
+	
+	<!--/////////////////////////////////JQ点击按钮弹出//////////////////////////////////////////-->	
+	<script>
+    $('#mobile-nav-btn').click(function(){
+        $('#header').addClass('navshow');
+        $('#nav-show-bg').css('display','block');
+    });
+    $('#nav-show-bg').click(function(){
+        $('#header').removeClass('navshow');
+        $(this).css('display','none');
+    });
+</script>
+<!--/////////////////////////////////JQ点击按钮弹出//////////////////////////////////////////-->	
+	
+	
+	
+	
+	
+	
+	
+<!--/////////////////////////////导航栏/////////////////////////////////////////-->	
+
+<header id="header">
+    <div class="mobile-header-logo visible-xs-block visible-sm-block"></div>
+	<span class="bg"></span>
+	<div class="container">
+		<!--手机端-->
+		<div class="row">
+			<div class="col-md-8 col">
+                <a class="logo pull-left hidden-xs" href="http://www.vrpapa.com">
+				    <img src="php/img/logo-sm.png" alt="明日世界" />
+				</a>
+				<div id="nav">
+					<a class="nav-item" href="index.html">首页</a><a class="nav-item" href="http://www.vrpapa.com/?m=post&a=latest">前沿资讯</a><a class="nav-item" href="http://www.vrpapa.com/?m=index&a=authors">推荐作者</a><a class="nav-item" href="http://www.vrpapa.com/?m=bbs&a=index">明日社区</a><a class="nav-item" href="http://www.vrpapa.com/?m=pro&a=index">未来商城</a><a class="nav-item" href="http://asgardia.space/citizenship">Asgardia</a>				</div>
+			</div>
+			<div class="col-md-4 col text-right" id="header-tools">
+				<ul class="list-inline mb-0">
+					<li>
+						<a href="#" data-toggle="modal" data-target="#searchModal">
+							<!--//搜索用的是图标字体 字体在fonts内-->
+							<i class="glyphicon glyphicon-search"></i>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.vrpapa.com/?m=post&a=publish">
+							<!--//编辑用的是图标字体 字体在fonts内-->
+							<i class="glyphicon glyphicon-edit"></i>
+						</a>
+					</li>
+										<li class="user unlog">
+						<a href="http://www.vrpapa.com?m=user&a=login">登录</a>
+						<span>|</span>
+						<a href="http://www.vrpapa.com?m=user&a=register">注册</a>
+											</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+
+<!--/////////////////////////////导航栏/////////////////////////////////////////-->	
+	
+<!--/////////////////////////////轮播图////////////////////////////////////////////////-->	
 	<div class="swiper-container">
 	  	<div class="swiper-wrapper">
 		    <div class="swiper-slide"><img src="img/201607242344371312.jpg"/></div>
 		    <div class="swiper-slide"><img src="img/201606171732257161.jpg"/></div>
 		    <div class="swiper-slide"><img src="img/201608210109343847.png"/></div>
+		    
+		    <div class="swiper-slide">Slide 1</div>
+        	<div class="swiper-slide">Slide 2</div>
+       		<div class="swiper-slide">Slide 3</div>
 		 </div>
 	</div>
 	</body>
@@ -45,11 +121,78 @@
 			var mySwiper = new Swiper('.swiper-container', {
 			autoplay: 2000,//可选选项，自动滑动
 			loop : true,
-			paginationType : 'fraction',
-//paginationType : 'progress',
-//paginationType : 'custom',
-		})
+			paginationElement : 'li',
+			paginationClickable :true,
+			keyboardControl : true,
+//			mousewheelControl : true,
 			
+		})
+
+	
+	</script>
+	
+<!--/////////////////////////////轮播图////////////////////////////////////////////////-->	
+	
+	
+	
+	
+<div class="post-list">
+	
+</div>	
+<!--//			调用数据库-->
+<script type="text/javascript">
+	
+
+function req(url,callBack){
+				var qq =new XMLHttpRequest;
+				qq.open("GET",url,true);
+				qq.send();
+				qq.onreadystatechange=function(){
+					if (qq.readyState==4&&qq.status==200) {
+						var str =qq.responseText;
+						var obj =JSON.parse(str);
+						if (callBack) {
+							callBack(obj);
+						}
+					}
+				}
+			}
+			req('ht.php',function(obj){
+				console.log(obj);
+				
+
+				create(obj);
+			});
+			
+			
+			
+			
+		 function create(obj){
+         var wrap = $(".post-list");
+          var ul = $("<ul></ul>");
+          wrap.append(ul);
+          for(var i =0;i<obj.length;i++){
+            var li = $("<li></li>");
+            li.addClass("title");
+  					var img = $("<img/>")
+  					$(li).append(img);
+
+  					img[0].src = "php/img/" + obj[i].preview;
+            ul.append(li);
+            var li_a = $("<a></a>");
+            li_a.addClass("a1");
+            li_a.text(obj[i].title);
+            li.append(li_a);
+            var span1 = $("<span></span>");
+            span1.addClass("span1");
+            span1.text(obj[i].by);
+            li.append(span1);
+            var span2 = $("<span></span>");
+            span2.addClass("span2");
+            span2.text(obj[i].details);
+            li.append(span2);
+          }
+   }
 	</script>
 	
 	

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<style type="text/css">
+			wrap{
+				margin: auto;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrap">
+		输入账号<br/>
+		<input type="input" name="userName" id="userName" />
+		<br/>
+		输入密码<br/>
+		<input type="password" name="pwd" id="pwd1"  />
+		<br/>
+		再次输入密码<br/>
+		<input type="password" name="pwd" id="pwd2"  />
+		
+		<button id="denglu">提交</button>
+		</div>
+		
+		<script type="text/javascript">
+		function req(url, callBack) {
+
+				var r = new XMLHttpRequest();
+
+				r.open("GET", url, true);
+
+				r.send();
+
+				r.onreadystatechange = function() {
+
+					if(r.readyState == 4 && r.status == 200) {
+
+						// json字符串解析成js对象
+
+						var obj = r.responseText;
+
+//						var obj = JSON.parse(str);
+
+						if(callBack) {
+
+							callBack(obj);
+
+							
+							
+
+						}
+
+					}
+
+				}
+
+			}
+
+		
+		
+		
+		
+			var zhanghao = document.querySelector("#userName");
+
+			var mima1 = document.querySelector("#pwd1");
+			var mima2 = document.querySelector("#pwd2");
+
+			var btn = document.querySelector("#denglu");
+			btn.onclick = function(){
+				if (mima1.value==mima2.value) {
+					var url = "addsql.php?username=" + zhanghao.value + "&pwd=" + mima2.value;
+					
+					req(url, function(obj){
+//						alert('添加成功');
+						console.log(url);
+						console.log(obj.bool);
+						if (obj) {
+								console.log('true');
+							}else{
+								alert('添加失败');
+							}
+//						location.replace("http://127.0.0.1/myphp/denglu/zhuce.html");
+						
+					});
+					
+				}else{
+					alert('请检查两次输入密码不一致');
+				}
+			}
+
+		</script>
+	</body>
+</html>
